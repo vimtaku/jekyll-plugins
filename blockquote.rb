@@ -27,6 +27,8 @@ module Jekyll
 
     def render(context)
       output = super
+      output = output.gsub(/\n/, "<br/>")
+      output = output.gsub(/\s/, "&nbsp;")
       if @by.nil?
         '<blockquote>' + output + '</blockquote>'
       else
@@ -60,6 +62,8 @@ module Jekyll
 
     def render(context)
       output = super
+      output = output.gsub(/\n/, "<br/>")
+      output = output.gsub(/\s/, "&nbsp;")
       if @by.nil?
         '<blockquote class="pullquote">' + output + '</blockquote>'
       else
